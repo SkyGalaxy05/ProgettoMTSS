@@ -46,6 +46,14 @@ public class RomanPrinter {
         " \\____|"
     };
 
+    private static final String[] LETTER_D = {
+        " ____  ",
+        "|  _ \\ ",
+        "| | | |",
+        "| |_| |",
+        "|____/ "
+    };
+
     public static String print(int num) {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
@@ -80,6 +88,8 @@ public class RomanPrinter {
                 return LETTER_L;
             case 'C':
                 return LETTER_C;
+            case 'D':
+                return LETTER_D;
             default:
                 throw new IllegalArgumentException("Lettera romana non supportata");
         }

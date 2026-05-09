@@ -90,8 +90,22 @@ public class RomanPrinterTest {
     }
 
     @Test
-    public void testPrintNumberOneHundredOneThrowsException() {
-        int number = 101;
+    public void testPrintNumberFiveHundredAsAsciiArtD() {
+        int number = 500;
+        String expectedAsciiArt = " ____  \n"
+            + "|  _ \\ \n"
+            + "| | | |\n"
+            + "| |_| |\n"
+            + "|____/ \n";
+
+        String asciiArt = RomanPrinter.print(number);
+
+        assertEquals(expectedAsciiArt, asciiArt);
+    }
+
+    @Test
+    public void testPrintNumberFiveHundredOneThrowsException() {
+        int number = 501;
 
         Executable printing = () -> RomanPrinter.print(number);
 
