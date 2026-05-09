@@ -6,3 +6,5 @@
 Progetto per il corso di Metodi e Tecnologie per lo Sviluppo Software - Università degli Studi di Padova.
 
 Conversione di numeri interi in numeri romani con rappresentazione ASCII Art.
+
+Analisi statica: Checkstyle viene eseguito dalla pipeline GitHub Actions. Il badge di build fallisce in caso di violazioni.
