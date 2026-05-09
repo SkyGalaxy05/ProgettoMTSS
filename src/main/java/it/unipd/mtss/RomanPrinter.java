@@ -29,8 +29,26 @@ public class RomanPrinter {
                    " | |   | |   | | \n" +
                    " | |   | |   | | \n" +
                    "|___| |___| |___|\n";
+        } else if (romanNumber.equals("IV")) {
+            return " ___  __     __\n" +
+                   "|_ _| \\ \\   / /\n" +
+                   " | |   \\ \\ / / \n" +
+                   " | |    \\ V /  \n" +
+                   "|___|    \\_/   \n";
+        } else if (romanNumber.equals("V")) {
+            return "__     __\n" +
+                   "\\ \\   / /\n" +
+                   " \\ \\ / / \n" +
+                   "  \\ V /  \n" +
+                   "   \\_/   \n";
+        } else if (romanNumber.equals("VI")) {
+            return "__     __  ___ \n" +
+                   "\\ \\   / / |_ _|\n" +
+                   " \\ \\ / /   | | \n" +
+                   "  \\ V /    | | \n" +
+                   "   \\_/    |___|\n";
         }
-        
+
         return "";
     }
 }

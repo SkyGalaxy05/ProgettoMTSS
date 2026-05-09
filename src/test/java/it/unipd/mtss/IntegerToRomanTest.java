@@ -12,48 +12,45 @@ public class IntegerToRomanTest {
 
     @Test
     public void testConvertNumberOneToRomanI() {
-        // Arrange
-        int number = 1;
-
-        // Act
-        String result = IntegerToRoman.convert(number);
-
-        // Assert
-        assertEquals("I", result);
+        assertEquals("I", IntegerToRoman.convert(1));
     }
 
     @Test
     public void testConvertNumberTwoToRomanII() {
-        // Arrange
-        int number = 2;
-
-        // Act
-        String result = IntegerToRoman.convert(number);
-
-        // Assert
-        assertEquals("II", result);
+        assertEquals("II", IntegerToRoman.convert(2));
     }
 
     @Test
     public void testConvertNumberThreeToRomanIII() {
-        // Arrange
-        int number = 3;
+        assertEquals("III", IntegerToRoman.convert(3));
+    }
 
-        // Act
-        String result = IntegerToRoman.convert(number);
+    @Test
+    public void testConvertNumberFourToRomanIV() {
+        assertEquals("IV", IntegerToRoman.convert(4));
+    }
 
-        // Assert
-        assertEquals("III", result);
+    @Test
+    public void testConvertNumberFiveToRomanV() {
+        assertEquals("V", IntegerToRoman.convert(5));
+    }
+
+    @Test
+    public void testConvertNumberSixToRomanVI() {
+        assertEquals("VI", IntegerToRoman.convert(6));
     }
 
     @Test
     public void testConvertNumberZeroThrowsException() {
-        // Arrange
-        int number = 0;
-
-        // Act & Assert
         assertThrows(IllegalArgumentException.class, () -> {
-            IntegerToRoman.convert(number);
+            IntegerToRoman.convert(0);
+        });
+    }
+
+    @Test
+    public void testConvertNumberSevenThrowsException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            IntegerToRoman.convert(7);
         });
     }
 }

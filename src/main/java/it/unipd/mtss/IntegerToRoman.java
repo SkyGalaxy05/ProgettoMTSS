@@ -7,18 +7,16 @@ package it.unipd.mtss;
 public class IntegerToRoman {
     
     public static String convert(int number) {
-        if (number < 1 || number > 3) {
-            throw new IllegalArgumentException("Numero fuori dal range consentito (1-3)");
+        switch (number) {
+            case 1: return "I";
+            case 2: return "II";
+            case 3: return "III";
+            case 4: return "IV";
+            case 5: return "V";
+            case 6: return "VI";
+            default:
+                throw new IllegalArgumentException(
+                    "Numero fuori dal range consentito (1-6)");
         }
-        
-        StringBuilder roman = new StringBuilder();
-        int remaining = number;
-        
-        while (remaining >= 1) {
-            roman.append("I");
-            remaining -= 1;
-        }
-        
-        return roman.toString();
     }
 }
