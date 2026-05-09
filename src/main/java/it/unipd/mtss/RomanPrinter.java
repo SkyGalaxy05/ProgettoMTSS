@@ -6,49 +6,62 @@ package it.unipd.mtss;
 
 public class RomanPrinter {
 
+    private static final String[] LETTER_I = {
+        " ___ ",
+        "|_ _|",
+        " | | ",
+        " | | ",
+        "|___|"
+    };
+
+    private static final String[] LETTER_V = {
+        "__     __",
+        "\\ \\   / /",
+        " \\ \\ / / ",
+        "  \\ V /  ",
+        "   \\_/   "
+    };
+
+    private static final String[] LETTER_X = {
+        "__   __",
+        "\\ \\ / /",
+        " \\ V / ",
+        "  > <  ",
+        " /_/ \\_\\"
+    };
+
     public static String print(int num) {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
 
     private static String printAsciiArt(String romanNumber) {
-        if (romanNumber.equals("I")) {
-            return " ___ \n" +
-                   "|_ _|\n" +
-                   " | | \n" +
-                   " | | \n" +
-                   "|___|\n";
-        } else if (romanNumber.equals("II")) {
-            return " ___   ___ \n" +
-                   "|_ _| |_ _|\n" +
-                   " | |   | | \n" +
-                   " | |   | | \n" +
-                   "|___| |___|\n";
-        } else if (romanNumber.equals("III")) {
-            return " ___   ___   ___ \n" +
-                   "|_ _| |_ _| |_ _|\n" +
-                   " | |   | |   | | \n" +
-                   " | |   | |   | | \n" +
-                   "|___| |___| |___|\n";
-        } else if (romanNumber.equals("IV")) {
-            return " ___  __     __\n" +
-                   "|_ _| \\ \\   / /\n" +
-                   " | |   \\ \\ / / \n" +
-                   " | |    \\ V /  \n" +
-                   "|___|    \\_/   \n";
-        } else if (romanNumber.equals("V")) {
-            return "__     __\n" +
-                   "\\ \\   / /\n" +
-                   " \\ \\ / / \n" +
-                   "  \\ V /  \n" +
-                   "   \\_/   \n";
-        } else if (romanNumber.equals("VI")) {
-            return "__     __  ___ \n" +
-                   "\\ \\   / / |_ _|\n" +
-                   " \\ \\ / /   | | \n" +
-                   "  \\ V /    | | \n" +
-                   "   \\_/    |___|\n";
+        StringBuilder asciiArt = new StringBuilder();
+
+        for (int row = 0; row < 5; row++) {
+            for (int i = 0; i < romanNumber.length(); i++) {
+                asciiArt.append(getLetterRows(romanNumber.charAt(i))[row]);
+
+                if (i < romanNumber.length() - 1) {
+                    asciiArt.append("  ");
+                }
+            }
+
+            asciiArt.append("\n");
         }
 
-        return "";
+        return asciiArt.toString();
+    }
+
+    private static String[] getLetterRows(char romanLetter) {
+        switch (romanLetter) {
+            case 'I':
+                return LETTER_I;
+            case 'V':
+                return LETTER_V;
+            case 'X':
+                return LETTER_X;
+            default:
+                throw new IllegalArgumentException("Lettera romana non supportata");
+        }
     }
 }
