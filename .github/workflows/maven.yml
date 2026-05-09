@@ -29,7 +29,13 @@ jobs:
       - name: Test (Fase di test)
         run: mvn test
 
-      # Step 3: Analisi Statica del codice con Checkstyle
+      # Step 3: Generazione report di code coverage e invio a Coveralls
+      - name: Coveralls (Code Coverage)
+        run: mvn jacoco:report coveralls:report -DrepoToken=${{ secrets.COVERALLS_TOKEN }}
+        env:
+          COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+
+      # Step 4: Analisi Statica del codice con Checkstyle
       # Usiamo skipTests per non rieseguire i test già passati nello step precedente
       - name: Analisi Statica (Fase di package)
         run: mvn package -DskipTests
