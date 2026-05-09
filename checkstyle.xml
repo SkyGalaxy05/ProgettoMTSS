@@ -12,8 +12,10 @@
   <module name="FileTabCharacter"/>
 
   <!-- LineLength: default max 80 characters -->
-  <module name="LineLength"/>
-
+  <module name="LineLength">
+    <property name="max" value="100"/>
+  </module>
+  
   <!-- Header check -->
   <module name="Header">
     <property name="header"
