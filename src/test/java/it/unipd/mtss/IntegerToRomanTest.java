@@ -6,206 +6,67 @@ package it.unipd.mtss;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class IntegerToRomanTest {
 
-    @Test
-    public void testConvertNumberOneToRomanI() {
-        int number = 1;
-        String expectedRomanNumber = "I";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberTwoToRomanII() {
-        int number = 2;
-        String expectedRomanNumber = "II";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberThreeToRomanIII() {
-        int number = 3;
-        String expectedRomanNumber = "III";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberFourToRomanIV() {
-        int number = 4;
-        String expectedRomanNumber = "IV";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberFiveToRomanV() {
-        int number = 5;
-        String expectedRomanNumber = "V";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberSixToRomanVI() {
-        int number = 6;
-        String expectedRomanNumber = "VI";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberSevenToRomanVII() {
-        int number = 7;
-        String expectedRomanNumber = "VII";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberEightToRomanVIII() {
-        int number = 8;
-        String expectedRomanNumber = "VIII";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberNineToRomanIX() {
-        int number = 9;
-        String expectedRomanNumber = "IX";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberTenToRomanX() {
-        int number = 10;
-        String expectedRomanNumber = "X";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberElevenToRomanXI() {
-        int number = 11;
-        String expectedRomanNumber = "XI";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberTwelveToRomanXII() {
-        int number = 12;
-        String expectedRomanNumber = "XII";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberThirteenToRomanXIII() {
-        int number = 13;
-        String expectedRomanNumber = "XIII";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberFourteenToRomanXIV() {
-        int number = 14;
-        String expectedRomanNumber = "XIV";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberFifteenToRomanXV() {
-        int number = 15;
-        String expectedRomanNumber = "XV";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberSixteenToRomanXVI() {
-        int number = 16;
-        String expectedRomanNumber = "XVI";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberSeventeenToRomanXVII() {
-        int number = 17;
-        String expectedRomanNumber = "XVII";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberEighteenToRomanXVIII() {
-        int number = 18;
-        String expectedRomanNumber = "XVIII";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberNineteenToRomanXIX() {
-        int number = 19;
-        String expectedRomanNumber = "XIX";
-
-        String romanNumber = IntegerToRoman.convert(number);
-
-        assertEquals(expectedRomanNumber, romanNumber);
-    }
-
-    @Test
-    public void testConvertNumberTwentyToRomanXX() {
-        int number = 20;
-        String expectedRomanNumber = "XX";
-
+    @ParameterizedTest
+    @CsvSource({
+        "1, I",
+        "2, II",
+        "3, III",
+        "4, IV",
+        "5, V",
+        "6, VI",
+        "7, VII",
+        "8, VIII",
+        "9, IX",
+        "10, X",
+        "11, XI",
+        "12, XII",
+        "13, XIII",
+        "14, XIV",
+        "15, XV",
+        "16, XVI",
+        "17, XVII",
+        "18, XVIII",
+        "19, XIX",
+        "20, XX",
+        "21, XXI",
+        "22, XXII",
+        "23, XXIII",
+        "24, XXIV",
+        "25, XXV",
+        "26, XXVI",
+        "27, XXVII",
+        "28, XXVIII",
+        "29, XXIX",
+        "30, XXX",
+        "31, XXXI",
+        "32, XXXII",
+        "33, XXXIII",
+        "34, XXXIV",
+        "35, XXXV",
+        "36, XXXVI",
+        "37, XXXVII",
+        "38, XXXVIII",
+        "39, XXXIX",
+        "40, XL",
+        "41, XLI",
+        "42, XLII",
+        "43, XLIII",
+        "44, XLIV",
+        "45, XLV",
+        "46, XLVI",
+        "47, XLVII",
+        "48, XLVIII",
+        "49, XLIX",
+        "50, L"
+    })
+    public void testConvertNumberToRoman(int number, String expectedRomanNumber) {
         String romanNumber = IntegerToRoman.convert(number);
 
         assertEquals(expectedRomanNumber, romanNumber);
@@ -221,8 +82,8 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvertNumberTwentyOneThrowsException() {
-        int number = 21;
+    public void testConvertNumberFiftyOneThrowsException() {
+        int number = 51;
 
         Executable conversion = () -> IntegerToRoman.convert(number);
 

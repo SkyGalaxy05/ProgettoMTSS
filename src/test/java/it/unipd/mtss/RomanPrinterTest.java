@@ -26,8 +26,8 @@ public class RomanPrinterTest {
     }
 
     @Test
-    public void testPrintNumberTwentyOneThrowsException() {
-        int number = 21;
+    public void testPrintNumberFiftyOneThrowsException() {
+        int number = 51;
 
         Executable printing = () -> RomanPrinter.print(number);
 
