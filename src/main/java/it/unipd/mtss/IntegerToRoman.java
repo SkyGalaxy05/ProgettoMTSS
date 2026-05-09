@@ -10,9 +10,9 @@ public class IntegerToRoman {
     private static final String[] ROMAN_NUMBERS = {"X", "IX", "V", "IV", "I"};
 
     public static String convert(int number) {
-        if (number < 1 || number > 10) {
+        if (number < 1 || number > 20) {
             throw new IllegalArgumentException(
-                "Numero fuori dal range consentito (1-10)");
+                "Numero fuori dal range consentito (1-20)");
         }
 
         StringBuilder romanNumber = new StringBuilder();
