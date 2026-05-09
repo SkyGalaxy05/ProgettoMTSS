@@ -104,8 +104,22 @@ public class RomanPrinterTest {
     }
 
     @Test
-    public void testPrintNumberFiveHundredOneThrowsException() {
-        int number = 501;
+    public void testPrintNumberOneThousandAsAsciiArtM() {
+        int number = 1000;
+        String expectedAsciiArt = " __  __ \n"
+            + "|  \\/  |\n"
+            + "| |\\/| |\n"
+            + "| |  | |\n"
+            + "|_|  |_|\n";
+
+        String asciiArt = RomanPrinter.print(number);
+
+        assertEquals(expectedAsciiArt, asciiArt);
+    }
+
+    @Test
+    public void testPrintNumberOneThousandOneThrowsException() {
+        int number = 1001;
 
         Executable printing = () -> RomanPrinter.print(number);
 

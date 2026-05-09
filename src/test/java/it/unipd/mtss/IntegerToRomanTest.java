@@ -127,7 +127,23 @@ public class IntegerToRomanTest {
         "400, CD",
         "444, CDXLIV",
         "499, CDXCIX",
-        "500, D"
+        "500, D",
+        "501, DI",
+        "549, DXLIX",
+        "599, DXCIX",
+        "600, DC",
+        "649, DCXLIX",
+        "699, DCXCIX",
+        "700, DCC",
+        "749, DCCXLIX",
+        "799, DCCXCIX",
+        "800, DCCC",
+        "849, DCCCXLIX",
+        "899, DCCCXCIX",
+        "900, CM",
+        "944, CMXLIV",
+        "999, CMXCIX",
+        "1000, M"
     })
     public void testConvertNumberToRoman(int number, String expectedRomanNumber) {
         String romanNumber = IntegerToRoman.convert(number);
@@ -145,8 +161,8 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvertNumberFiveHundredOneThrowsException() {
-        int number = 501;
+    public void testConvertNumberOneThousandOneThrowsException() {
+        int number = 1001;
 
         Executable conversion = () -> IntegerToRoman.convert(number);
 
